@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  resume-screener:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: resume_screening_app
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
